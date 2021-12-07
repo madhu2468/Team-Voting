@@ -4,8 +4,9 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Constants from 'expo-constants';
 
 
-// You can import from local files
+
 import HomeScreen from './screens/HomeScreen';
+import VoteScreen from './screens/VoteScreen';
 
 export default class App extends React.Component {
   render() {
@@ -18,7 +19,8 @@ export default class App extends React.Component {
 }
 
 var AppNavigator = createSwitchNavigator({
-  HomeScreen: HomeScreen
+  HomeScreen: HomeScreen,
+  VoteScreen: VoteScreen
 });
 
 const AppContainer = createAppContainer(AppNavigator);

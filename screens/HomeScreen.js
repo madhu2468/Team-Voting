@@ -13,6 +13,10 @@ import db from '../config';
 
 export default class HomeScreen extends Component {
 
+  nextScreen = () =>{
+    this.props.navigation.navigate('VoteScreen');
+  }
+
   teamA(){
    db.ref('/').update({
      'teamA':1
@@ -42,12 +46,14 @@ export default class HomeScreen extends Component {
           <View style={styles.ratingContainer}>
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
+           onPress={() => this.props.navigation.navigate('VoteScreen')}
               style={styles.buttons}
               onPress ={this.teamA()}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('VoteScreen')}
               style={styles.buttons}
               onPress ={this.teamB()}>
               <Text style={{ fontSize:20}}>Team B</Text>
@@ -69,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor:"coral",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 15,
     margin:10,
     width: 150,
